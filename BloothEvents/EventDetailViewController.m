@@ -53,6 +53,7 @@
     self.eventName.text = event.eventName;
     self.eventName.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
     self.eventThumbnail.file = event.thumbnail;
+    [eventThumbnail loadInBackground];
     self.startDate.text = event.startDate;
     self.descriptionTextView.text = event.descriptionText;
     self.eventId = event.eventID;

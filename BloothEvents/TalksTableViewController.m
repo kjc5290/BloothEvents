@@ -16,7 +16,6 @@
 @interface TalksTableViewController ()
 
 @property(strong, nonatomic) NSString *EventID;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 

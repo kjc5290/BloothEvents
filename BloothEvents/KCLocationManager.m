@@ -58,7 +58,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 
     
-    if([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]== NO){
+    if([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]] == NO){
         
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
@@ -94,19 +94,7 @@
 
 - (void) getBeaconsAtEvent{
     //add manager status check
-    if([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]){
-        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            [self.locationManager requestAlwaysAuthorization];
-        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Locaiton Manager"
-                                                        message:@"Location Manager not authorized. Location services are required for this application"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        
-        [alert show];
-        return;
-    }
+    
     self.beaconsToMonitor = [NSArray new];
     self.returnedBeaconObjects = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Beacons"];
@@ -117,9 +105,8 @@
             for (PFObject *object in realObjects){
                 NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:[object objectForKey:@"UUID"]];
                 //NSString *uuid = [object objectForKey:@"UUID"];
-                NSNumber * major = [NSNumber numberWithUnsignedShort:(unsigned short)[object objectForKey:@"Major"]]; //TODO the major and minor are not same as backend uint_16 type conversion from parse.com number. Conversion from NSNumber to Beacon class property CLBeaconMajor/minor value is the problem
-                NSNumber  *minor = [NSNumber numberWithUnsignedShort:
-                                    (unsigned short)[object objectForKey:@"Minor"]];
+                NSNumber * major = [object objectForKey:@"Major"]; //TODO the major and minor are not same as backend uint_16 type conversion from parse.com number. Conversion from NSNumber to Beacon class property CLBeaconMajor/minor value is the problem i think
+                NSNumber  *minor = [object objectForKey:@"Minor"];
                 NSString *eventId = [object objectForKey:@"eventId"];
                 NSString *identifier = [object objectForKey:@"identifier"];
                 
@@ -163,7 +150,7 @@
         region.notifyOnEntry=YES;
         region.notifyOnExit =YES;
         [self.locationManager startMonitoringForRegion:region];
-        [self.locationManager startRangingBeaconsInRegion:region];
+        //[self.locationManager startRangingBeaconsInRegion:region];
         NSLog(@"%@",self.locationManager.monitoredRegions);
     }
     
@@ -192,7 +179,7 @@
 {
 
     NSLog(@"locationManagerDidChangeAuthorizationStatus: %d", status);
-    /*if (status != 3){
+    /*if (status != 3){ ATTEMPT TO ENSURE PERMISSIONS
     NSString *message = @"Location Services Disabled! Blooth Events uses location services to provide exclusive offers while to users based on their location at the conference! Please enable Location services in Settings to get the full experience.";
         [self locationServicesNotAuthed:message];
     } */
@@ -214,7 +201,7 @@
 {
     for (CLBeaconRegion *region in _beaconsToMonitor){
         [self.locationManager requestStateForRegion:region];
-        NSLog(@"%@",self.locationManager.monitoredRegions);
+        NSLog(@"%@",self.locationManager.monitoredRegions); DEBUG
         
     }
     
@@ -226,11 +213,10 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLBeaconRegion *)region{
-    if (CLRegionStateInside){
+    if (state == CLRegionStateInside){
         [self.locationManager startRangingBeaconsInRegion:region];
         NSLog(@"We are in a region");
-    }
-    if (CLRegionStateOutside){
+    }else if(state == CLRegionStateOutside || CLRegionStateUnknown){
         NSLog(@"We are not in a region");
     }
 }
@@ -242,7 +228,7 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    //filter the array out for any beacons that are far or unknown and compare to the last seen beacon in order to determine if an update is needed
+    //filter the array out for any beacons that are far or unknown and compare to the last seen beacon in order to determine if an update is needed -70 rssi value might work better
      NSPredicate *predicateIrrelevantBeacons = [NSPredicate predicateWithFormat:@"(self.accuracy != -1) AND ((self.proximity != %d) OR (self.proximity != %d))", CLProximityFar,CLProximityUnknown];
     NSArray *relevantBeacons = [beacons filteredArrayUsingPredicate: predicateIrrelevantBeacons];
     CLBeacon *closestBeacon = nil;
@@ -253,27 +239,37 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
     BOOL sameUUID = [closestBeacon.proximityUUID isEqual:_nearestBeacon.proximityUUID];
     if (sameUUID == FALSE){
         self.nearestBeacon = closestBeacon;
-        NSLog(@"Nearest Beacon is : %@", self.nearestBeacon);
-        [self lastBeaconSeenUpdate];
+        NSLog(@"Nearest Beacon is : %@", self.nearestBeacon); //pass value for null logic to stop hitting parse everytime there is null
+        int count = 0;
+        if (_nearestBeacon != NULL){
+           [self lastBeaconSeenUpdate];
+            count = 0;
+        }else{
+            count++;
+            if (count > 1){ //everything else
+                return;
+            }else{ //first time
+                NSNull *isNull = [NSNull null];
+                PFUser *user = [PFUser currentUser];
+                user[@"lastBeacon"] = isNull;
+                [user saveInBackground];
+                NSLog(@"Touched UserObject on null");
+            }
+        }
+        
     }
 }
 
 - (void) lastBeaconSeenUpdate{
-    //write function to save the beacon outside of ranging because it gets called every second
    NSArray *regions = [self.locationManager.monitoredRegions allObjects];
    for (CLBeaconRegion *region in regions){
        BOOL sameUUID = [region.proximityUUID isEqual:_nearestBeacon.proximityUUID];
      if (sameUUID == TRUE){
      PFUser *user = [PFUser currentUser];
      user[@"lastBeacon"] = region.identifier;
-     self.lastSeenBeacon = region.identifier;
+     self.lastSeenBeacon = region.identifier; //get identifier for common name string
      [user saveInBackground];
      NSLog(@"Just saved: %@", user[@"lastBeacon"]);
-     }else{
-         PFUser *user = [PFUser currentUser];
-         user[@"lastBeacon"] = nil;
-         self.lastSeenBeacon = nil;
-         [user saveInBackground];
      }
    }
 }

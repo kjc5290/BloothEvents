@@ -17,7 +17,7 @@
 @interface SurveysTableViewController ()
 
 @property(strong, nonatomic) NSString *EventID;
-@property (nonatomic, strong) NSURL *surveyURL;
+@property (nonatomic, strong) NSString *surveyURL;
 
 @end
 
@@ -130,7 +130,7 @@
  
  PFObject *object = [self.objects objectAtIndex:indexPath.row];
  NSString *fullURL = [object objectForKey:@"surveyURL"];
- self.surveyURL = [NSURL URLWithString:fullURL];
+ self.surveyURL = fullURL;
  destViewController.surveyURL = _surveyURL;
  
  }

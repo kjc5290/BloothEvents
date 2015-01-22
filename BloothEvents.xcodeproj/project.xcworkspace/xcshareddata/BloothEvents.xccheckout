@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>01E8AB22-B84B-4F26-9FE2-B673F544063A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BloothEvents</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2BA56CA90959FAAF11E2A2FF5EDDF8E2FC0C80EB</key>
+		<string>https://github.com/kjc5290/BloothEvents.git</string>
+		<key>60425AEF3A3758F6FD4E9705FB276A2A8A79CDC9</key>
+		<string>https://github.com/kjc5290/BloothEvents.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BloothEvents.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2BA56CA90959FAAF11E2A2FF5EDDF8E2FC0C80EB</key>
+		<string>../..BloothEvents/</string>
+		<key>60425AEF3A3758F6FD4E9705FB276A2A8A79CDC9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kjc5290/BloothEvents.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>60425AEF3A3758F6FD4E9705FB276A2A8A79CDC9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>60425AEF3A3758F6FD4E9705FB276A2A8A79CDC9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BloothEvents</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2BA56CA90959FAAF11E2A2FF5EDDF8E2FC0C80EB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BloothEvents</string>
+		</dict>
+	</array>
+</dict>
+</plist>

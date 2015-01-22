@@ -28,17 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        eventId = [defaults objectForKey:@"currentEventId"];
-        
-        PFQuery *imageQuery = [PFQuery queryWithClassName:@"Events"];
-        [imageQuery getObjectInBackgroundWithId:eventId block:^(PFObject *object, NSError *error) {
-            if (!error){
-                event.eventMap = [object objectForKey:@"eventMap"];
-            }else{
-                NSLog(@"%@", error);
-            }
-        }];
+
     }
     return self;
 }
@@ -55,7 +45,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mapView.file = event.eventMap;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    eventId = [defaults objectForKey:@"currentEventId"];
+    
+    PFQuery *imageQuery = [PFQuery queryWithClassName:ParseEventClassName];
+    [imageQuery getObjectInBackgroundWithId:eventId block:^(PFObject *object, NSError *error) {
+       
+        if (!error){
+            self.mapView.file = object[@"eventMap"];
+                [mapView loadInBackground];
+        }else{
+            NSLog(@"%@", error);
+        }
+    }];
 }
     
 

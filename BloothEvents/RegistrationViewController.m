@@ -199,7 +199,7 @@
 } */
 
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if(buttonIndex== alertView.cancelButtonIndex){
+    if(buttonIndex == alertView.cancelButtonIndex){
         PFUser *currentUser = [PFUser currentUser];
         if (currentUser) {
             NSLog(@"Logged IN");
@@ -318,7 +318,7 @@
         }
     }
     
-    if (pass2 == password){
+    if ([pass2 isEqualToString:password]){
         textError = NO;
         
     }else{

@@ -11,6 +11,6 @@
 @interface SurveyWebBrowser : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
-@property (strong, nonatomic) NSURL *surveyURL;
+@property (strong, nonatomic) NSString *surveyURL;
 
 @end

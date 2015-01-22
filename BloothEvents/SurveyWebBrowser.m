@@ -15,14 +15,17 @@
 @end
 
 @implementation SurveyWebBrowser
+@synthesize webView;
+@synthesize surveyURL;
 
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.toolbarHidden = NO;
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:_surveyURL];
-    [_webView loadRequest:requestObj];
+    NSURL *url = [NSURL URLWithString:surveyURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
 }
 
 
