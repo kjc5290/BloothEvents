@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2BA56CA90959FAAF11E2A2FF5EDDF8E2FC0C80EB</key>
-		<string>../..BloothEvents/</string>
+		<string>../..BloothEvents</string>
 		<key>60425AEF3A3758F6FD4E9705FB276A2A8A79CDC9</key>
 		<string>../..</string>
 	</dict>
@@ -46,7 +46,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>2BA56CA90959FAAF11E2A2FF5EDDF8E2FC0C80EB</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BloothEvents</string>
+			<string>BloothEventsBloothEvents</string>
 		</dict>
 	</array>
 </dict>

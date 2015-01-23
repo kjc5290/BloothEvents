@@ -35,7 +35,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    self.navigationItem.title = @"Event Map";
 }
 
 - (void)viewDidLayoutSubviews {

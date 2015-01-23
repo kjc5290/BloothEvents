@@ -16,13 +16,13 @@
 
 @interface ExclusiveOffersTableViewController () <
 PKAddPassesViewControllerDelegate>
-{
-    NSString *addedPassId;
-}
+
+@property(strong, nonatomic) NSString *addedPassId;
 
 @end
 
 @implementation ExclusiveOffersTableViewController
+@synthesize addedPassId;
 
 - (instancetype)initWithCoder:(NSCoder *)aCoder{
     self = [super initWithCoder:aCoder];
@@ -74,6 +74,8 @@ PKAddPassesViewControllerDelegate>
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
+    NSLog(@"%@", [PFUser currentUser]);
+    [[PFUser currentUser] fetch];
     NSArray *offerIds = [[PFUser currentUser] objectForKey:@"offersArray"];
     
     // If no objects are loaded in memory, we look to the cache first to fill the table
@@ -117,8 +119,9 @@ PKAddPassesViewControllerDelegate>
     PFObject *object = [self.objects objectAtIndex:indexPath.row];
     Offer *selectedOffer = [Offer new];
     selectedOffer.passFile = object[@"iphonePassFile"];
-    selectedOffer.offerId = object[@"objectId"];
+    selectedOffer.offerId = object.objectId;
     selectedOffer.offerTitle = object[@"title"];
+    
     [self openPassWithOffer:selectedOffer];
     
 }
@@ -133,6 +136,8 @@ PKAddPassesViewControllerDelegate>
             NSError* passError = nil;
             PKPass *newPass = [[PKPass alloc] initWithData:data
                                                      error:&passError];
+            
+            addedPassId = offer.offerId;
             
             PKAddPassesViewController *addController =
             [[PKAddPassesViewController alloc] initWithPass:newPass];
@@ -153,8 +158,7 @@ PKAddPassesViewControllerDelegate>
             NSLog(@"%@", [error localizedDescription]);
         }
     }];
-    addedPassId = [NSString new];
-    addedPassId = offer.offerId;
+    [self updateThings:offer];
 }
 
 #pragma mark - Pass controller delegate
@@ -163,11 +167,17 @@ PKAddPassesViewControllerDelegate>
 {
     //pass added
     [self dismissViewControllerAnimated:YES completion:nil];
-    //subtract one from passesRemaining column on Offer object
+    
+
+
+    
+}
+
+- (void) updateThings:(Offer*)offer{
     PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
     
     // Retrieve the object by id
-    [query getObjectInBackgroundWithId:addedPassId block:^(PFObject *offer, NSError *error) {
+    [query getObjectInBackgroundWithId:offer.offerId block:^(PFObject *offer, NSError *error) {
         
         //decrement offersRemaining count by 1
         [offer incrementKey:@"passesRemaining" byAmount:[NSNumber numberWithInt:-1]];
@@ -175,9 +185,7 @@ PKAddPassesViewControllerDelegate>
         
     }];
     
-    [[PFUser currentUser] removeObject:addedPassId forKey:@"offersArray"];
+    [[PFUser currentUser] removeObject:offer.offerId forKey:@"offersArray"];
     [[PFUser currentUser] saveInBackground];
-
-    
 }
 @end

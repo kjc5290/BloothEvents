@@ -129,7 +129,9 @@
                 [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                     if (!error) {
                         [[PFUser currentUser] setObject:result[@"name"] forKey:ParseFBUserName];
-                       // [[PFUser currentUser] setObject:result[@"email"] forKey:current];
+                       // [[PFUser currentUser] setObject:result[@"email"] forKey:ParseFBEmail];
+                       // [[PFUser currentUser] setObject:result[@"title"] forKey:ParseFBUserTitle];
+                        //[[PFUser currentUser] setObject:result[@"company"] forKey:ParseFBCurrentCompany];
                         // title and company
                         [[PFUser currentUser] saveInBackground];
                     }

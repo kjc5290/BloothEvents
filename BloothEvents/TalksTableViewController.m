@@ -11,6 +11,10 @@
 #import "Events.h"
 #import "TalksTableViewCell.h"
 #import "KCLocationManager.h"
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 
 @interface TalksTableViewController ()

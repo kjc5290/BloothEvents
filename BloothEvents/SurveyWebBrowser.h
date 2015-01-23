@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) NSString *surveyURL;
+@property (strong, nonatomic) NSString *titleString;
 
 @end

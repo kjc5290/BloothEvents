@@ -22,10 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.toolbarHidden = NO;
     NSURL *url = [NSURL URLWithString:surveyURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+    self.navigationItem.title = _titleString;
 }
 
 

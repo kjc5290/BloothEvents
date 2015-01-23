@@ -43,6 +43,7 @@
     //nav
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:43.0f/255.0f green:181.0f/255.0f blue:46.0f/255.0f alpha:1.0f]];
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
      self.navController = [[UINavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
 
     [PFFacebookUtils initializeFacebook];
@@ -51,19 +52,27 @@
          NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([defaults objectForKey:@"currentEventId"] == nil){
         // Present event picker straight-away
-        [self presentEventPicker];
+            UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
+            EventPickerTableViewController *eventController = [mainboard instantiateInitialViewController];
+            self.window.rootViewController=nil;
+            self.window.rootViewController = self.navController;
+            [self.navController pushViewController:eventController animated:YES];
         }else{
-            [self presentMain];
+            UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tb = [mainboard instantiateInitialViewController];
+            self.window.rootViewController = tb;
+            [self.window makeKeyAndVisible];
         }
     } else {
         // Go to the welcome screen and have them log in or create an account.
-        [self presentLoginViewController];
+        LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+        self.window.rootViewController=nil;
+        self.window.rootViewController = self.navController;
+        viewController.delegate = self;
+        [self.navController setViewControllers:@[ viewController ] animated:NO];
     }
     
     [KCLocationManager sharedManager];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navController;
-    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -116,8 +125,11 @@
 }
 
 - (void)presentLoginViewController {
+   //added this code in applicationDidFinish instead of its own method so the nav heiarchy would be correct
     // Go to the welcome screen and have them log in or create an account.
     LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController=nil;
+    self.window.rootViewController = self.navController;
     viewController.delegate = self;
     [self.navController setViewControllers:@[ viewController ] animated:NO];
 }
@@ -126,8 +138,11 @@
     [self presentEventPicker];
 }
 - (void) presentEventPicker{
+    //added this code in applicationDidFinish instead of its own method so the nav heiarchy would be correct
     UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
     EventPickerTableViewController *eventController = [mainboard instantiateInitialViewController];
+    self.window.rootViewController=nil;
+    self.window.rootViewController = self.navController;
     [self.navController pushViewController:eventController animated:YES];
     
 }
@@ -136,9 +151,12 @@
     [self presentEventPicker];
 }
 - (void) presentMain{
+    //added this code in applicationDidFinish instead of its own method so the nav heiarchy would be correct
     UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *tb = [mainboard instantiateInitialViewController];
-    [self.navController.navigationItem setHidesBackButton:YES animated:YES];
+    self.window.rootViewController=nil;
+    self.window.rootViewController = tb;
+    [self.window makeKeyAndVisible];
     [self.navController pushViewController:tb animated:YES];
 }
 

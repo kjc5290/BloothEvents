@@ -17,7 +17,6 @@
 @interface SurveysTableViewController ()
 
 @property(strong, nonatomic) NSString *EventID;
-@property (nonatomic, strong) NSString *surveyURL;
 
 @end
 
@@ -72,7 +71,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //this hides the entire nav bar which is not ideal incase the eventId needs to be changed
-    self.navigationController.navigationBarHidden = YES;
     self.navigationItem.title = @"Available Surveys";
 }
 
@@ -116,6 +114,7 @@
     return cell;
 }
 
+
 - (void) objectsDidLoad:(NSError *)error
 {
     [super objectsDidLoad:error];
@@ -126,13 +125,21 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  if ([segue.identifier isEqualToString:@"showSurveyWebBrowser"]) {
  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
- SurveyWebBrowser *destViewController = segue.destinationViewController;
- 
- PFObject *object = [self.objects objectAtIndex:indexPath.row];
- NSString *fullURL = [object objectForKey:@"surveyURL"];
- self.surveyURL = fullURL;
- destViewController.surveyURL = _surveyURL;
- 
+SurveyWebBrowser *destViewController = segue.destinationViewController;
+     
+     
+     PFObject *object = [self.objects objectAtIndex:indexPath.row];
+     NSString *fullURL = [object objectForKey:@"surveyURL"];
+     NSString *titleSent = [object objectForKey:@"surveyTitle"];
+     destViewController.surveyURL = fullURL;
+     destViewController.titleString = titleSent;
+     destViewController.navigationItem.title = titleSent;
+     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                    initWithTitle: @"Done"
+                                    style: UIBarButtonItemStyleDone
+                                    target: nil action: nil];
+     [self.navigationItem setBackBarButtonItem: backButton];
+
  }
  }
 
