@@ -114,6 +114,7 @@
     [cell.picture loadInBackground];
     cell.title.text = [object objectForKey:@"title"];
     cell.startTime.text = [object objectForKey:@"startTime"];
+    cell.presenters.text = [object objectForKey:@"presenterName"];
     
     return cell;
 }

@@ -19,5 +19,6 @@
 @synthesize startTime;
 @synthesize picture;
 @synthesize title;
+@synthesize presenters;
 
 @end

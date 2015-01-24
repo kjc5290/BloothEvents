@@ -39,7 +39,18 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
-    
+    if (application.applicationState != UIApplicationStateBackground) {
+        // Track an app open here if we launch with a push, unless
+        // "content_available" was used to trigger a background push (introduced
+        // in iOS 7). In that case, we skip tracking here to avoid double
+        // counting the app-open.
+        BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
+        BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
+        BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+            [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        }
+    }
     //nav
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:43.0f/255.0f green:181.0f/255.0f blue:46.0f/255.0f alpha:1.0f]];
     
@@ -73,6 +84,12 @@
     }
     
     [KCLocationManager sharedManager];
+    
+    //push notifcation response
+     NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    if(notificationPayload){
+        [self offerPushReceived:notificationPayload];
+    }
     
     return YES;
 }
@@ -117,11 +134,21 @@
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     currentInstallation.channels = @[ @"global" ];
+    [currentInstallation setObject:[PFUser currentUser] forKey:@"user"];
     [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+    [self offerPushReceived:userInfo];
+    if (application.applicationState == UIApplicationStateInactive) {
+        // The application was just brought from the background to the foreground,
+        // so we consider the app as having been "opened by a push notification."
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+    if (application.applicationState == UIApplicationStateInactive) {
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
 }
 
 - (void)presentLoginViewController {
@@ -158,6 +185,13 @@
     self.window.rootViewController = tb;
     [self.window makeKeyAndVisible];
     [self.navController pushViewController:tb animated:YES];
+}
+
+- (void) offerPushReceived:(NSDictionary*)pushData{
+   NSString *offerObjKey = [pushData objectForKey:@"offerObjId"];
+    [[PFUser currentUser] addUniqueObject:offerObjKey forKey:@"offersArray"];
+    [[PFUser currentUser] saveInBackground];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 

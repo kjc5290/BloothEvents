@@ -18,6 +18,8 @@
 PKAddPassesViewControllerDelegate>
 
 @property(strong, nonatomic) NSString *addedPassId;
+@property(strong, nonatomic) PKPassLibrary *passLibrary;
+@property(strong, nonatomic) Offer *offer;
 
 @end
 
@@ -44,6 +46,7 @@ PKAddPassesViewControllerDelegate>
 #pragma mark -
 #pragma mark Dealloc
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:PKPassLibraryDidChangeNotification object:_passLibrary];
 
 }
 
@@ -52,6 +55,8 @@ PKAddPassesViewControllerDelegate>
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Offers";
+    _passLibrary = [[PKPassLibrary alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(passLibraryDidChange:) name:PKPassLibraryDidChangeNotification object:_passLibrary];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -74,17 +79,15 @@ PKAddPassesViewControllerDelegate>
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    NSLog(@"%@", [PFUser currentUser]);
     [[PFUser currentUser] fetch];
-    NSArray *offerIds = [[PFUser currentUser] objectForKey:@"offersArray"];
+        NSArray *offerIds = [[PFUser currentUser] objectForKey:@"offersArray"];
+        [query whereKey:@"objectId" containedIn:offerIds];
     
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
     if ([self.objects count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
-    
-    [query whereKey:@"objectId" containedIn:offerIds];
     
     return query;
 }
@@ -121,7 +124,7 @@ PKAddPassesViewControllerDelegate>
     selectedOffer.passFile = object[@"iphonePassFile"];
     selectedOffer.offerId = object.objectId;
     selectedOffer.offerTitle = object[@"title"];
-    
+    _offer = selectedOffer;
     [self openPassWithOffer:selectedOffer];
     
 }
@@ -158,7 +161,6 @@ PKAddPassesViewControllerDelegate>
             NSLog(@"%@", [error localizedDescription]);
         }
     }];
-    [self updateThings:offer];
 }
 
 #pragma mark - Pass controller delegate
@@ -171,6 +173,11 @@ PKAddPassesViewControllerDelegate>
 
 
     
+}
+
+- (void)passLibraryDidChange:(NSNotification *)notification
+{
+    [self updateThings:_offer];
 }
 
 - (void) updateThings:(Offer*)offer{

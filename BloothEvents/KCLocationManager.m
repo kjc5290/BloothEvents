@@ -240,23 +240,24 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
     if (sameUUID == FALSE){
         self.nearestBeacon = closestBeacon;
         NSLog(@"Nearest Beacon is : %@", self.nearestBeacon); //pass value for null logic to stop hitting parse everytime there is null
-        int count = 0;
+        bool null = true;
+        int count;
         if (_nearestBeacon != NULL){
            [self lastBeaconSeenUpdate];
+             null = false;
             count = 0;
         }else{
             count++;
-            if (count > 1){ //everything else
-                return;
-            }else{ //first time
-                NSNull *isNull = [NSNull null];
+            if (count == 1 && null == true){ //everything else
+                NSNull *nullValue = [NSNull null];
                 PFUser *user = [PFUser currentUser];
-                user[@"lastBeacon"] = isNull;
+                user[@"lastBeacon"] = nullValue;
                 [user saveInBackground];
                 NSLog(@"Touched UserObject on null");
+            }else{ //first time
+                return;
             }
         }
-        
     }
 }
 
