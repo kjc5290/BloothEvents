@@ -134,7 +134,6 @@
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     currentInstallation.channels = @[ @"global" ];
-    [currentInstallation setObject:[PFUser currentUser] forKey:@"user"];
     [currentInstallation saveInBackground];
 }
 
@@ -162,6 +161,9 @@
 }
 //todo change the xib
 - (void)loginViewControllerDidLogin:(LoginViewController *)controller {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setObject:[PFUser currentUser] forKey:@"user"];
+    [currentInstallation saveInBackground];
     [self presentEventPicker];
 }
 - (void) presentEventPicker{

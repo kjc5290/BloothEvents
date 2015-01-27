@@ -54,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C74238D11A0B11F200798294 /* PBXContainerItemProxy */ = {
+		C7BC744D1A773B93000B9197 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C74238AF1A0B11F100798294 /* Project object */;
 			proxyType = 1;
@@ -356,7 +356,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C74238D21A0B11F200798294 /* PBXTargetDependency */,
+				C7BC744E1A773B93000B9197 /* PBXTargetDependency */,
 			);
 			name = BloothEventsTests;
 			productName = BloothEventsTests;
@@ -471,10 +471,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C74238D21A0B11F200798294 /* PBXTargetDependency */ = {
+		C7BC744E1A773B93000B9197 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C74238B61A0B11F100798294 /* BloothEvents */;
-			targetProxy = C74238D11A0B11F200798294 /* PBXContainerItemProxy */;
+			targetProxy = C7BC744D1A773B93000B9197 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -536,6 +536,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = com.blooth;
 				PROVISIONING_PROFILE = "56d4bb20-1567-4f5a-b1b4-dfd6b2ca057d";
 				SDKROOT = iphoneos;
 			};
@@ -572,6 +573,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = com.blooth;
 				PROVISIONING_PROFILE = "56d4bb20-1567-4f5a-b1b4-dfd6b2ca057d";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -637,7 +639,7 @@
 				INFOPLIST_FILE = BloothEventsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = com.blooth;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BloothEvents.app/BloothEvents";
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -652,7 +654,7 @@
 				INFOPLIST_FILE = BloothEventsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = com.blooth;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BloothEvents.app/BloothEvents";
+				TEST_HOST = "";
 			};
 			name = Release;
 		};

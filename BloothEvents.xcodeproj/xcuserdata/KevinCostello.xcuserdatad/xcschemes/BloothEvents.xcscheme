@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C74238CF1A0B11F200798294"
-               BuildableName = "BloothEventsTests.xctest"
+               BuildableName = "com.blooth.xctest"
                BlueprintName = "BloothEventsTests"
                ReferencedContainer = "container:BloothEvents.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C74238CF1A0B11F200798294"
-               BuildableName = "BloothEventsTests.xctest"
+               BuildableName = "com.blooth.xctest"
                BlueprintName = "BloothEventsTests"
                ReferencedContainer = "container:BloothEvents.xcodeproj">
             </BuildableReference>
