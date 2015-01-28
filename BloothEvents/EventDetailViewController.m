@@ -98,7 +98,7 @@
                                                       userInfo:nil];
     
     NSLog(@"%@", currentEventID);
-    [self.navigationController pushViewController:tb animated:YES];
+    [self presentViewController:tb animated:YES completion:nil];
 }
 
 #pragma mark ActivityView

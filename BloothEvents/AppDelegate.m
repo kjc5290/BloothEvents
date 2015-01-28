@@ -15,6 +15,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "RegistrationViewController.h"
+#import "HexColorConverter.h"
 
 
 @interface AppDelegate () <LoginViewControllerDelegate, RegistrationViewControllerDelegate>
@@ -28,6 +29,7 @@
     // Override point for customization after application launch.
     
     //parse info
+
     [Parse setApplicationId:@"vSG1sUHBHr6u4yV98nhLpRhBd99TymLG7R9Pj7zK" clientKey:@"myMfTfqnMoboNwpU5vGWA2lD2pM6c5nShfZIGFzF"];
     
     //push stuff ios 8
@@ -51,8 +53,17 @@
             [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
         }
     }
-    //nav
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:43.0f/255.0f green:181.0f/255.0f blue:46.0f/255.0f alpha:1.0f]];
+    //navbar global tint
+    UIImage *navbar = [UIImage imageNamed:@"blooth_navbar_copy"];
+    [[UINavigationBar appearance] setBackgroundImage:navbar forBarMetrics:UIBarMetricsDefault];
+   [[UINavigationBar appearance] setTintColor:[[HexColorConverter alloc]colorWithHexString:@"C0C0C0"]];
+    
+    //tabBar global tint
+    UIImage *tabBarBackground = [UIImage imageNamed:@"blooth_tabBar"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    [[UITabBar appearance] setTintColor:[[HexColorConverter alloc]colorWithHexString:@"C0C0C0"]];
+    [[UITabBar appearance] setSelectionIndicatorImage:
+     [UIImage imageNamed:@"blooth_tabBarSelected"]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
      self.navController = [[UINavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
@@ -64,10 +75,9 @@
         if ([defaults objectForKey:@"currentEventId"] == nil){
         // Present event picker straight-away
             UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
-            EventPickerTableViewController *eventController = [mainboard instantiateInitialViewController];
-            self.window.rootViewController=nil;
-            self.window.rootViewController = self.navController;
-            [self.navController pushViewController:eventController animated:YES];
+            UINavigationController *eventNav = [mainboard instantiateViewControllerWithIdentifier:@"eventPickNav"];
+            self.window.rootViewController = eventNav;
+            [self.window makeKeyAndVisible];
         }else{
             UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UITabBarController *tb = [mainboard instantiateInitialViewController];
@@ -159,7 +169,7 @@
     viewController.delegate = self;
     [self.navController setViewControllers:@[ viewController ] animated:NO];
 }
-//todo change the xib
+
 - (void)loginViewControllerDidLogin:(LoginViewController *)controller {
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setObject:[PFUser currentUser] forKey:@"user"];
@@ -168,11 +178,10 @@
 }
 - (void) presentEventPicker{
     //added this code in applicationDidFinish instead of its own method so the nav heiarchy would be correct
-    UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
-    EventPickerTableViewController *eventController = [mainboard instantiateInitialViewController];
-    self.window.rootViewController=nil;
-    self.window.rootViewController = self.navController;
-    [self.navController pushViewController:eventController animated:YES];
+    UIStoryboard *storyBoard;
+    storyBoard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
+    UINavigationController *eventPicker = [storyBoard instantiateViewControllerWithIdentifier:@"eventPickNav"];
+    [self.navController presentViewController:eventPicker animated:YES completion:nil];
     
 }
 
@@ -195,6 +204,7 @@
     [[PFUser currentUser] saveInBackground];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
+
 
 
 @end

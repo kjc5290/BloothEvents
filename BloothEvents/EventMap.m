@@ -58,6 +58,21 @@
             NSLog(@"%@", error);
         }
     }];
+    //custom nav stuff
+    UIBarButtonItem * changeEvent = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"blooth_eventPicker"] style:UIBarButtonItemStylePlain target:self action:@selector(showEventPicker)];
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = changeEvent;
+    
+    UIImage *image = [UIImage imageNamed: @"blooth_logo_full"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+    imageView.frame = CGRectMake(0, 0, 200, 30);
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = 5.0;
+    self.navigationItem.titleView = imageView;
+    
+    UIBarButtonItem * settings = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"blooth_settings"] style:UIBarButtonItemStylePlain target:self action:@selector(showUser)];
+    self.navigationItem.rightBarButtonItem = settings;
+    
 }
     
 
@@ -87,5 +102,17 @@
                                           otherButtonTitles:nil];
     
     [alert show];
+}
+
+-(void) showEventPicker{
+    UIStoryboard *storyBoard;
+    
+    storyBoard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
+    UINavigationController *eventPicker = [storyBoard instantiateViewControllerWithIdentifier:@"eventPickNav"];
+    [self presentViewController:eventPicker animated:YES completion:nil];
+}
+
+- (void) showUser{
+    
 }
 @end

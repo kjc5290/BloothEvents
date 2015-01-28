@@ -15,11 +15,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "HexColorConverter.h"
 
 
 @interface TalksTableViewController ()
 
 @property(strong, nonatomic) NSString *EventID;
+@property(strong, nonatomic)UISegmentedControl *control;
+
+
 
 @end
 
@@ -66,6 +70,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Event Schedule";
+    
+    UIImage *navbar = [UIImage imageNamed:@"blooth_navbar_copy"];
+    [[UINavigationBar appearance] setBackgroundImage:navbar forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[[HexColorConverter alloc]colorWithHexString:@"C0C0C0"]];
+    
+    [self customNav];
+}
+
+- (void)customNav{
+    _control = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Schedule", @"My Schedule", nil]];
+    [_control setSelectedSegmentIndex:0];
+    [_control sizeToFit];
+    self.navigationItem.titleView = _control;
+    
+    UIBarButtonItem * changeEvent = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"blooth_eventPicker"] style:UIBarButtonItemStylePlain target:self action:@selector(showEventPicker)];
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = changeEvent;
+    
+    UIBarButtonItem * settings = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"blooth_settings"] style:UIBarButtonItemStylePlain target:self action:@selector(showUser)];
+    self.navigationItem.rightBarButtonItem = settings;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -95,7 +119,19 @@
      }
   [query orderByAscending:@"orderOfAppearence"];
   NSLog(@"%@", _EventID);
-  [query whereKey:@"eventId" equalTo:_EventID];
+    
+    switch (_control.selectedSegmentIndex) {
+        case 0:
+        
+            [query whereKey:@"eventId" equalTo:_EventID];
+            return query;
+            break;
+       
+        case 1:
+            
+            return query;
+            break;
+    }
     return query;
 }
 
@@ -111,6 +147,8 @@
     // Configure the cell
 
     cell.picture.file = [object objectForKey:@"picture"];
+    cell.picture.layer.masksToBounds = YES;
+    cell.picture.layer.cornerRadius = 5.0;
     [cell.picture loadInBackground];
     cell.title.text = [object objectForKey:@"title"];
     cell.startTime.text = [object objectForKey:@"startTime"];
@@ -149,6 +187,18 @@
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _EventID = [defaults objectForKey:@"currentEventId"];
     [self loadObjects];
+}
+
+-(void) showEventPicker{
+    UIStoryboard *storyBoard;
+    
+    storyBoard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
+    UINavigationController *eventPicker = [storyBoard instantiateViewControllerWithIdentifier:@"eventPickNav"];
+    [self presentViewController:eventPicker animated:YES completion:nil];
+}
+
+- (void) showUser{
+    
 }
 
 

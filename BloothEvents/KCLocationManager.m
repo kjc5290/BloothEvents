@@ -218,6 +218,10 @@
         NSLog(@"We are in a region");
     }else if(state == CLRegionStateOutside || CLRegionStateUnknown){
         NSLog(@"We are not in a region");
+        NSNull *nullValue = [NSNull null];
+        PFUser *user = [PFUser currentUser];
+        user[@"lastBeacon"] = nullValue;
+        [user saveInBackground];
     }
 }
 

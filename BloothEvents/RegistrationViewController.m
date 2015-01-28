@@ -204,7 +204,10 @@
         if (currentUser) {
             NSLog(@"Logged IN");
             NSLog(@"%@", currentUser);
-            [self.delegate signupviewControllerDidLogin:self];
+            UIStoryboard *storyBoard;
+            storyBoard = [UIStoryboard storyboardWithName:@"EventPicker" bundle:nil];
+            UINavigationController *eventPicker = [storyBoard instantiateViewControllerWithIdentifier:@"eventPickNav"];
+            [self.navigationController presentViewController:eventPicker animated:YES completion:nil];
         }
         else {
             NSLog(@"failure");

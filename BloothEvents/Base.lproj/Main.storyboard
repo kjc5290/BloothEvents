@@ -172,41 +172,49 @@
         <scene sceneID="38M-UJ-yAo">
             <objects>
                 <tableViewController title="Schedule" id="uWJ-S1-Ucd" customClass="TalksTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="l4S-i6-UjN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="l4S-i6-UjN">
+                        <rect key="frame" x="0.0" y="44" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TalksTableViewCell" rowHeight="80" id="oks-zG-SY6" customClass="TalksTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TalksTableViewCell" rowHeight="88" id="oks-zG-SY6" customClass="TalksTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oks-zG-SY6" id="11k-YJ-hsd">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="66G-EA-kNx">
-                                            <rect key="frame" x="88" y="4" width="77" height="21"/>
+                                            <rect key="frame" x="122" y="4" width="77" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Pd4-Sb-kgW" customClass="PFImageView">
-                                            <rect key="frame" x="8" y="4" width="72" height="72"/>
+                                            <rect key="frame" x="48" y="8" width="66" height="68"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="presenters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C9L-U3-gem">
-                                            <rect key="frame" x="88" y="55" width="224" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="presenters" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C9L-U3-gem">
+                                            <rect key="frame" x="122" y="55" width="224" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="5Hy-6W-HkI">
-                                            <rect key="frame" x="88" y="29" width="436" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="5Hy-6W-HkI">
+                                            <rect key="frame" x="122" y="31" width="436" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8q2-2u-fF7">
+                                            <rect key="frame" x="8" y="21" width="32" height="42"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="blooth_ribbon.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="selected" image="blooth_ribbon_selected.png"/>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -224,7 +232,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Schedule" id="bep-Ah-eQx" userLabel="Schedule"/>
-                    <navigationItem key="navigationItem" id="sm7-fv-IHZ"/>
+                    <navigationItem key="navigationItem" id="sm7-fv-IHZ">
+                        <nil key="title"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEG-ff-APn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,8 +292,8 @@
         <scene sceneID="Gci-aN-Epv">
             <objects>
                 <navigationController id="X1U-SO-UfW" userLabel="ScheduleNav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" id="zJT-Or-B7c"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BW5-W5-qBe">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="blooth_scheduleIcon.png" id="zJT-Or-B7c"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" backIndicatorImage="blooth_navbar_copy.png" id="BW5-W5-qBe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -299,7 +309,7 @@
         <scene sceneID="7N2-vz-YeN">
             <objects>
                 <navigationController id="mc9-gd-NT0" userLabel="ExclusiveOffersNav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ExclusiveOffers" id="T6n-yC-tHr"/>
+                    <tabBarItem key="tabBarItem" title="ExclusiveOffers" image="blooth_offersIcon.png" id="T6n-yC-tHr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mOj-1p-ZI4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -310,13 +320,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIg-uP-vAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="-605"/>
+            <point key="canvasLocation" x="38" y="-612"/>
         </scene>
         <!--Map Nav-->
         <scene sceneID="Wjx-OI-9Ug">
             <objects>
                 <navigationController id="VBm-1n-F1m" userLabel="Map Nav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="1ag-xK-iy7"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="blooth_mapIcon.png" id="1ag-xK-iy7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUY-7Z-fkJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -333,7 +343,7 @@
         <scene sceneID="GGt-O8-JGM">
             <objects>
                 <navigationController id="Ob7-ni-XTP" userLabel="SurveyNav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Surveys" id="ZPu-S5-EH1"/>
+                    <tabBarItem key="tabBarItem" title="Surveys" image="blooth_surveyIcon.png" id="ZPu-S5-EH1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g3o-hm-IQp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -364,6 +374,15 @@
             <point key="canvasLocation" x="3" y="1412"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blooth_mapIcon.png" width="32" height="32"/>
+        <image name="blooth_navbar_copy.png" width="320" height="88"/>
+        <image name="blooth_offersIcon.png" width="32" height="32"/>
+        <image name="blooth_ribbon.png" width="19" height="24"/>
+        <image name="blooth_ribbon_selected.png" width="19" height="24"/>
+        <image name="blooth_scheduleIcon.png" width="32" height="32"/>
+        <image name="blooth_surveyIcon.png" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

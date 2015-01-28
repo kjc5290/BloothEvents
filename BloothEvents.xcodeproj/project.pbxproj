@@ -12,15 +12,12 @@
 		C71605D51A43812E009D58FD /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = C71605D41A43812E009D58FD /* Beacon.m */; };
 		C71605D71A4895AC009D58FD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71605D61A4895AB009D58FD /* FacebookSDK.framework */; };
 		C71605D91A489626009D58FD /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71605D81A489626009D58FD /* FBAudienceNetwork.framework */; };
-		C71605DB1A489BE1009D58FD /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71605DA1A489BE1009D58FD /* ParseFacebookUtils.framework */; };
 		C71605DF1A48EBAA009D58FD /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71605DE1A48EBAA009D58FD /* RegistrationViewController.m */; };
 		C71605E31A490276009D58FD /* PlainTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C71605E21A490276009D58FD /* PlainTextFieldCell.m */; };
 		C71605E51A49E0FA009D58FD /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71605E41A49E0FA009D58FD /* RegistrationViewController.xib */; };
 		C7205AA11A375CCF00944B10 /* KCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7205AA01A375CCF00944B10 /* KCLocationManager.m */; };
 		C7229F4A1A3C85960059EE6F /* EventPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7229F491A3C85960059EE6F /* EventPickerTableViewController.m */; };
 		C7229F4C1A3C896E0059EE6F /* EventPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7229F4B1A3C896E0059EE6F /* EventPicker.storyboard */; };
-		C739C3561A391B1200A58619 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C739C3551A391B1200A58619 /* ParseUI.framework */; };
-		C739C3571A391B5200A58619 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7652C4A1A21483000A42108 /* Parse.framework */; };
 		C74238BD1A0B11F100798294 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C74238BC1A0B11F100798294 /* main.m */; };
 		C74238C01A0B11F100798294 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C74238BF1A0B11F100798294 /* AppDelegate.m */; };
 		C74238C31A0B11F100798294 /* TalksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74238C21A0B11F100798294 /* TalksTableViewController.m */; };
@@ -29,7 +26,6 @@
 		C74238CB1A0B11F100798294 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74238C91A0B11F100798294 /* LaunchScreen.xib */; };
 		C74238D71A0B11F200798294 /* BloothEventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C74238D61A0B11F200798294 /* BloothEventsTests.m */; };
 		C74238E31A0BCAFB00798294 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74238E21A0BCAFB00798294 /* CoreLocation.framework */; };
-		C7652C4B1A21483000A42108 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7652C491A21483000A42108 /* Bolts.framework */; };
 		C7652C4E1A21483E00A42108 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7652C4D1A21483E00A42108 /* CoreGraphics.framework */; };
 		C7652C501A21484700A42108 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7652C4F1A21484700A42108 /* UIKit.framework */; };
 		C7652C521A21485100A42108 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7652C511A21485100A42108 /* Foundation.framework */; };
@@ -50,6 +46,25 @@
 		C7AC0CC91A65CF20008E582C /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AC0CC81A65CF1F008E582C /* PassKit.framework */; };
 		C7AC0CCD1A66EEFE008E582C /* ExclusiveOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AC0CCC1A66EEFE008E582C /* ExclusiveOffersTableViewController.m */; };
 		C7AC0CD01A67F9FD008E582C /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AC0CCF1A67F9FD008E582C /* Offer.m */; };
+		C7BC74511A77F525000B9197 /* HexColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BC74501A77F525000B9197 /* HexColorConverter.m */; };
+		C7BC74531A780350000B9197 /* blooth_navbar_copy.png in Resources */ = {isa = PBXBuildFile; fileRef = C7BC74521A780350000B9197 /* blooth_navbar_copy.png */; };
+		C7C795D51A78226D0071F936 /* blooth_text.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795D41A78226D0071F936 /* blooth_text.png */; };
+		C7C795D91A782C9A0071F936 /* blooth_logo_full.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795D81A782C9A0071F936 /* blooth_logo_full.png */; };
+		C7C795DC1A7863660071F936 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C795DA1A7863660071F936 /* Parse.framework */; };
+		C7C795DD1A7863660071F936 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C795DB1A7863660071F936 /* ParseCrashReporting.framework */; };
+		C7C795DF1A7863B90071F936 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C795DE1A7863B90071F936 /* Bolts.framework */; };
+		C7C795E21A7863CA0071F936 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C795E01A7863CA0071F936 /* ParseFacebookUtils.framework */; };
+		C7C795E31A7863CA0071F936 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C795E11A7863CA0071F936 /* ParseUI.framework */; };
+		C7C795E51A787EC10071F936 /* blooth_ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795E41A787EC10071F936 /* blooth_ribbon.png */; };
+		C7C795E71A787FF40071F936 /* blooth_ribbon_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795E61A787FF40071F936 /* blooth_ribbon_selected.png */; };
+		C7C795EB1A788AC90071F936 /* blooth_eventPicker.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795EA1A788AC90071F936 /* blooth_eventPicker.png */; };
+		C7C795ED1A788F8B0071F936 /* blooth_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795EC1A788F8B0071F936 /* blooth_settings.png */; };
+		C7C795EF1A7895FB0071F936 /* blooth_tabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795EE1A7895FB0071F936 /* blooth_tabBar.png */; };
+		C7C795F11A78960B0071F936 /* blooth_tabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795F01A78960B0071F936 /* blooth_tabBarSelected.png */; };
+		C7C795FB1A789DB20071F936 /* blooth_mapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795FA1A789DB20071F936 /* blooth_mapIcon.png */; };
+		C7C795FD1A789DBC0071F936 /* blooth_offersIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795FC1A789DBC0071F936 /* blooth_offersIcon.png */; };
+		C7C795FF1A789DC70071F936 /* blooth_scheduleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795FE1A789DC70071F936 /* blooth_scheduleIcon.png */; };
+		C7C796011A789DD00071F936 /* blooth_surveyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C796001A789DD00071F936 /* blooth_surveyIcon.png */; };
 		C7CDD9B71A115B2900303EE3 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CDD9B61A115B2900303EE3 /* Events.m */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +87,6 @@
 		C71605D41A43812E009D58FD /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
 		C71605D61A4895AB009D58FD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		C71605D81A489626009D58FD /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = ../FacebookSDK/FBAudienceNetwork.framework; sourceTree = "<group>"; };
-		C71605DA1A489BE1009D58FD /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		C71605DE1A48EBAA009D58FD /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		C71605E01A48F027009D58FD /* RegistrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		C71605E11A490262009D58FD /* PlainTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlainTextFieldCell.h; sourceTree = "<group>"; };
@@ -83,7 +97,6 @@
 		C7229F481A3C85680059EE6F /* EventPickerTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventPickerTableViewController.h; sourceTree = "<group>"; };
 		C7229F491A3C85960059EE6F /* EventPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPickerTableViewController.m; sourceTree = "<group>"; };
 		C7229F4B1A3C896E0059EE6F /* EventPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPicker.storyboard; sourceTree = "<group>"; };
-		C739C3551A391B1200A58619 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../parse-library-1.5.0/ParseUI.framework"; sourceTree = "<group>"; };
 		C74238B71A0B11F100798294 /* com.blooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.blooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74238BB1A0B11F100798294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74238BC1A0B11F100798294 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,8 +112,6 @@
 		C74238D61A0B11F200798294 /* BloothEventsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BloothEventsTests.m; sourceTree = "<group>"; };
 		C74238E01A0B18CE00798294 /* BloothConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BloothConstants.h; sourceTree = "<group>"; };
 		C74238E21A0BCAFB00798294 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C7652C491A21483000A42108 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../parse-library-1.5.0/Bolts.framework"; sourceTree = "<group>"; };
-		C7652C4A1A21483000A42108 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../parse-library-1.5.0/Parse.framework"; sourceTree = "<group>"; };
 		C7652C4D1A21483E00A42108 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C7652C4F1A21484700A42108 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C7652C511A21485100A42108 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +142,26 @@
 		C7AC0CCC1A66EEFE008E582C /* ExclusiveOffersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveOffersTableViewController.m; sourceTree = "<group>"; };
 		C7AC0CCE1A67F9EA008E582C /* Offer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		C7AC0CCF1A67F9FD008E582C /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		C7BC744F1A77F506000B9197 /* HexColorConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HexColorConverter.h; sourceTree = "<group>"; };
+		C7BC74501A77F525000B9197 /* HexColorConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColorConverter.m; sourceTree = "<group>"; };
+		C7BC74521A780350000B9197 /* blooth_navbar_copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_navbar_copy.png; path = ../../blooth_navbar_copy.png; sourceTree = "<group>"; };
+		C7C795D41A78226D0071F936 /* blooth_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blooth_text.png; sourceTree = "<group>"; };
+		C7C795D81A782C9A0071F936 /* blooth_logo_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blooth_logo_full.png; sourceTree = "<group>"; };
+		C7C795DA1A7863660071F936 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../parse-library-1.6.2/Parse.framework"; sourceTree = "<group>"; };
+		C7C795DB1A7863660071F936 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../parse-library-1.6.2/ParseCrashReporting.framework"; sourceTree = "<group>"; };
+		C7C795DE1A7863B90071F936 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../parse-library-1.6.2/Bolts.framework"; sourceTree = "<group>"; };
+		C7C795E01A7863CA0071F936 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../parse-library-1.6.2/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		C7C795E11A7863CA0071F936 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../parse-library-1.6.2/ParseUI.framework"; sourceTree = "<group>"; };
+		C7C795E41A787EC10071F936 /* blooth_ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_ribbon.png; path = ../../icons/blooth_ribbon.png; sourceTree = "<group>"; };
+		C7C795E61A787FF40071F936 /* blooth_ribbon_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_ribbon_selected.png; path = ../../icons/blooth_ribbon_selected.png; sourceTree = "<group>"; };
+		C7C795EA1A788AC90071F936 /* blooth_eventPicker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_eventPicker.png; path = ../../icons/blooth_eventPicker.png; sourceTree = "<group>"; };
+		C7C795EC1A788F8B0071F936 /* blooth_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_settings.png; path = ../../icons/blooth_settings.png; sourceTree = "<group>"; };
+		C7C795EE1A7895FB0071F936 /* blooth_tabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_tabBar.png; path = ../../icons/blooth_tabBar.png; sourceTree = "<group>"; };
+		C7C795F01A78960B0071F936 /* blooth_tabBarSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_tabBarSelected.png; path = ../../icons/blooth_tabBarSelected.png; sourceTree = "<group>"; };
+		C7C795FA1A789DB20071F936 /* blooth_mapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_mapIcon.png; path = ../../icons/blooth_mapIcon.png; sourceTree = "<group>"; };
+		C7C795FC1A789DBC0071F936 /* blooth_offersIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_offersIcon.png; path = ../../icons/blooth_offersIcon.png; sourceTree = "<group>"; };
+		C7C795FE1A789DC70071F936 /* blooth_scheduleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_scheduleIcon.png; path = ../../icons/blooth_scheduleIcon.png; sourceTree = "<group>"; };
+		C7C796001A789DD00071F936 /* blooth_surveyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_surveyIcon.png; path = ../../icons/blooth_surveyIcon.png; sourceTree = "<group>"; };
 		C7CDD9B51A115B0700303EE3 /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Events.h; path = ../Events.h; sourceTree = "<group>"; };
 		C7CDD9B61A115B2900303EE3 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Events.m; path = ../Events.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,11 +171,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71605DB1A489BE1009D58FD /* ParseFacebookUtils.framework in Frameworks */,
+				C7C795E21A7863CA0071F936 /* ParseFacebookUtils.framework in Frameworks */,
+				C7C795E31A7863CA0071F936 /* ParseUI.framework in Frameworks */,
+				C7C795DF1A7863B90071F936 /* Bolts.framework in Frameworks */,
+				C7C795DC1A7863660071F936 /* Parse.framework in Frameworks */,
+				C7C795DD1A7863660071F936 /* ParseCrashReporting.framework in Frameworks */,
 				C71605D91A489626009D58FD /* FBAudienceNetwork.framework in Frameworks */,
 				C71605D71A4895AC009D58FD /* FacebookSDK.framework in Frameworks */,
-				C739C3571A391B5200A58619 /* Parse.framework in Frameworks */,
-				C739C3561A391B1200A58619 /* ParseUI.framework in Frameworks */,
 				C7652C5E1A21488600A42108 /* AudioToolbox.framework in Frameworks */,
 				C7AC0CC91A65CF20008E582C /* PassKit.framework in Frameworks */,
 				C7652C5C1A21487C00A42108 /* SystemConfiguration.framework in Frameworks */,
@@ -155,7 +188,6 @@
 				C7652C521A21485100A42108 /* Foundation.framework in Frameworks */,
 				C7652C501A21484700A42108 /* UIKit.framework in Frameworks */,
 				C7652C4E1A21483E00A42108 /* CoreGraphics.framework in Frameworks */,
-				C7652C4B1A21483000A42108 /* Bolts.framework in Frameworks */,
 				C74238E31A0BCAFB00798294 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +245,19 @@
 		C74238BA1A0B11F100798294 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7C795FE1A789DC70071F936 /* blooth_scheduleIcon.png */,
+				C7C796001A789DD00071F936 /* blooth_surveyIcon.png */,
+				C7C795FC1A789DBC0071F936 /* blooth_offersIcon.png */,
+				C7C795FA1A789DB20071F936 /* blooth_mapIcon.png */,
+				C7C795F01A78960B0071F936 /* blooth_tabBarSelected.png */,
+				C7C795EE1A7895FB0071F936 /* blooth_tabBar.png */,
+				C7C795EC1A788F8B0071F936 /* blooth_settings.png */,
+				C7C795EA1A788AC90071F936 /* blooth_eventPicker.png */,
+				C7C795E41A787EC10071F936 /* blooth_ribbon.png */,
+				C7C795E61A787FF40071F936 /* blooth_ribbon_selected.png */,
+				C7C795D41A78226D0071F936 /* blooth_text.png */,
+				C7C795D81A782C9A0071F936 /* blooth_logo_full.png */,
+				C7BC74521A780350000B9197 /* blooth_navbar_copy.png */,
 				C74238BB1A0B11F100798294 /* Info.plist */,
 				C74238BC1A0B11F100798294 /* main.m */,
 			);
@@ -267,11 +312,14 @@
 		C74238E61A0BF1B000798294 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7C795E01A7863CA0071F936 /* ParseFacebookUtils.framework */,
+				C7C795E11A7863CA0071F936 /* ParseUI.framework */,
+				C7C795DE1A7863B90071F936 /* Bolts.framework */,
+				C7C795DA1A7863660071F936 /* Parse.framework */,
+				C7C795DB1A7863660071F936 /* ParseCrashReporting.framework */,
 				C7AC0CC81A65CF1F008E582C /* PassKit.framework */,
-				C71605DA1A489BE1009D58FD /* ParseFacebookUtils.framework */,
 				C71605D81A489626009D58FD /* FBAudienceNetwork.framework */,
 				C71605D61A4895AB009D58FD /* FacebookSDK.framework */,
-				C739C3551A391B1200A58619 /* ParseUI.framework */,
 				C7652C5D1A21488600A42108 /* AudioToolbox.framework */,
 				C7652C5B1A21487C00A42108 /* SystemConfiguration.framework */,
 				C7652C591A21487300A42108 /* MobileCoreServices.framework */,
@@ -281,8 +329,6 @@
 				C7652C511A21485100A42108 /* Foundation.framework */,
 				C7652C4F1A21484700A42108 /* UIKit.framework */,
 				C7652C4D1A21483E00A42108 /* CoreGraphics.framework */,
-				C7652C491A21483000A42108 /* Bolts.framework */,
-				C7652C4A1A21483000A42108 /* Parse.framework */,
 				C74238E21A0BCAFB00798294 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -291,6 +337,8 @@
 		C7652C651A21497B00A42108 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C7BC744F1A77F506000B9197 /* HexColorConverter.h */,
+				C7BC74501A77F525000B9197 /* HexColorConverter.m */,
 				C7652C641A21496B00A42108 /* ActivityView.h */,
 				C7652C621A21494C00A42108 /* ActivityView.m */,
 			);
@@ -415,9 +463,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7652C671A214B2700A42108 /* LoginViewController.xib in Resources */,
+				C7C795FF1A789DC70071F936 /* blooth_scheduleIcon.png in Resources */,
+				C7C795F11A78960B0071F936 /* blooth_tabBarSelected.png in Resources */,
+				C7C795D51A78226D0071F936 /* blooth_text.png in Resources */,
+				C7C795FD1A789DBC0071F936 /* blooth_offersIcon.png in Resources */,
+				C7C795FB1A789DB20071F936 /* blooth_mapIcon.png in Resources */,
+				C7BC74531A780350000B9197 /* blooth_navbar_copy.png in Resources */,
+				C7C795E71A787FF40071F936 /* blooth_ribbon_selected.png in Resources */,
 				C74238C61A0B11F100798294 /* Main.storyboard in Resources */,
 				C74238CB1A0B11F100798294 /* LaunchScreen.xib in Resources */,
+				C7C796011A789DD00071F936 /* blooth_surveyIcon.png in Resources */,
 				C74238C81A0B11F100798294 /* Images.xcassets in Resources */,
+				C7C795EF1A7895FB0071F936 /* blooth_tabBar.png in Resources */,
+				C7C795D91A782C9A0071F936 /* blooth_logo_full.png in Resources */,
+				C7C795ED1A788F8B0071F936 /* blooth_settings.png in Resources */,
+				C7C795EB1A788AC90071F936 /* blooth_eventPicker.png in Resources */,
+				C7C795E51A787EC10071F936 /* blooth_ribbon.png in Resources */,
 				C71605E51A49E0FA009D58FD /* RegistrationViewController.xib in Resources */,
 				C7229F4C1A3C896E0059EE6F /* EventPicker.storyboard in Resources */,
 			);
@@ -444,6 +505,7 @@
 				C7205AA11A375CCF00944B10 /* KCLocationManager.m in Sources */,
 				C71605E31A490276009D58FD /* PlainTextFieldCell.m in Sources */,
 				C7AC0CD01A67F9FD008E582C /* Offer.m in Sources */,
+				C7BC74511A77F525000B9197 /* HexColorConverter.m in Sources */,
 				C74238C31A0B11F100798294 /* TalksTableViewController.m in Sources */,
 				C74238C01A0B11F100798294 /* AppDelegate.m in Sources */,
 				C71605D51A43812E009D58FD /* Beacon.m in Sources */,
@@ -592,6 +654,7 @@
 					"/Users/KevinCostello/iphonetest/parse-library-1.5.0",
 					/Users/KevinCostello/iphonetest/FacebookSDK,
 					/Users/KevinCostello/iphonetest,
+					"/Users/KevinCostello/iphonetest/parse-library-1.6.2",
 				);
 				INFOPLIST_FILE = BloothEvents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -614,6 +677,7 @@
 					"/Users/KevinCostello/iphonetest/parse-library-1.5.0",
 					/Users/KevinCostello/iphonetest/FacebookSDK,
 					/Users/KevinCostello/iphonetest,
+					"/Users/KevinCostello/iphonetest/parse-library-1.6.2",
 				);
 				INFOPLIST_FILE = BloothEvents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

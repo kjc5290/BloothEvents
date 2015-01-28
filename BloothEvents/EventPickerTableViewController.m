@@ -59,7 +59,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.title = @"Choose an Event";
+    
+    UIImage *image = [UIImage imageNamed: @"blooth_logo_full"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+    imageView.frame = CGRectMake(0, 0, 200, 30);
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = 5.0;
+    self.navigationItem.titleView = imageView;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
