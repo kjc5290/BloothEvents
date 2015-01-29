@@ -65,6 +65,12 @@
 		C7C795FD1A789DBC0071F936 /* blooth_offersIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795FC1A789DBC0071F936 /* blooth_offersIcon.png */; };
 		C7C795FF1A789DC70071F936 /* blooth_scheduleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C795FE1A789DC70071F936 /* blooth_scheduleIcon.png */; };
 		C7C796011A789DD00071F936 /* blooth_surveyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C796001A789DD00071F936 /* blooth_surveyIcon.png */; };
+		C7C796031A7918C10071F936 /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C796021A7918C10071F936 /* UserProfileViewController.xib */; };
+		C7C796061A79423C0071F936 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C796051A79423C0071F936 /* UserProfileViewController.m */; };
+		C7C7960A1A7950A40071F936 /* blooth__blkCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C796091A7950A40071F936 /* blooth__blkCircle.png */; };
+		C7C796121A79C9FC0071F936 /* blooth__userBGBLK.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C796111A79C9FC0071F936 /* blooth__userBGBLK.png */; };
+		C7C796151A79CD760071F936 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C796141A79CD760071F936 /* ProfileTableViewCell.m */; };
+		C7C796171A79D3200071F936 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C796161A79D3200071F936 /* ProfileTableViewCell.xib */; };
 		C7CDD9B71A115B2900303EE3 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CDD9B61A115B2900303EE3 /* Events.m */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +168,14 @@
 		C7C795FC1A789DBC0071F936 /* blooth_offersIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_offersIcon.png; path = ../../icons/blooth_offersIcon.png; sourceTree = "<group>"; };
 		C7C795FE1A789DC70071F936 /* blooth_scheduleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_scheduleIcon.png; path = ../../icons/blooth_scheduleIcon.png; sourceTree = "<group>"; };
 		C7C796001A789DD00071F936 /* blooth_surveyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blooth_surveyIcon.png; path = ../../icons/blooth_surveyIcon.png; sourceTree = "<group>"; };
+		C7C796021A7918C10071F936 /* UserProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
+		C7C796041A7942220071F936 /* UserProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		C7C796051A79423C0071F936 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		C7C796091A7950A40071F936 /* blooth__blkCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blooth__blkCircle.png; sourceTree = "<group>"; };
+		C7C796111A79C9FC0071F936 /* blooth__userBGBLK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blooth__userBGBLK.png; sourceTree = "<group>"; };
+		C7C796131A79CD570071F936 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		C7C796141A79CD760071F936 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
+		C7C796161A79D3200071F936 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		C7CDD9B51A115B0700303EE3 /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Events.h; path = ../Events.h; sourceTree = "<group>"; };
 		C7CDD9B61A115B2900303EE3 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Events.m; path = ../Events.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +250,8 @@
 				C74238C91A0B11F100798294 /* LaunchScreen.xib */,
 				C7229F4B1A3C896E0059EE6F /* EventPicker.storyboard */,
 				C7652C661A214B2700A42108 /* LoginViewController.xib */,
+				C7C796021A7918C10071F936 /* UserProfileViewController.xib */,
+				C7C796161A79D3200071F936 /* ProfileTableViewCell.xib */,
 				C71605E41A49E0FA009D58FD /* RegistrationViewController.xib */,
 				C74238BA1A0B11F100798294 /* Supporting Files */,
 			);
@@ -245,6 +261,8 @@
 		C74238BA1A0B11F100798294 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7C796111A79C9FC0071F936 /* blooth__userBGBLK.png */,
+				C7C796091A7950A40071F936 /* blooth__blkCircle.png */,
 				C7C795FE1A789DC70071F936 /* blooth_scheduleIcon.png */,
 				C7C796001A789DD00071F936 /* blooth_surveyIcon.png */,
 				C7C795FC1A789DBC0071F936 /* blooth_offersIcon.png */,
@@ -305,6 +323,8 @@
 				C71605CE1A41EC38009D58FD /* EventDetailViewController.m */,
 				C71605E11A490262009D58FD /* PlainTextFieldCell.h */,
 				C71605E21A490276009D58FD /* PlainTextFieldCell.m */,
+				C7C796041A7942220071F936 /* UserProfileViewController.h */,
+				C7C796051A79423C0071F936 /* UserProfileViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +374,8 @@
 				C792A2C21A615A4B000BA563 /* SurveyTableViewCell.m */,
 				C76799841A6D97C80018A52C /* OfferViewCell.h */,
 				C76799851A6D97D70018A52C /* OfferViewCell.m */,
+				C7C796131A79CD570071F936 /* ProfileTableViewCell.h */,
+				C7C796141A79CD760071F936 /* ProfileTableViewCell.m */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -463,12 +485,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7652C671A214B2700A42108 /* LoginViewController.xib in Resources */,
+				C7C796171A79D3200071F936 /* ProfileTableViewCell.xib in Resources */,
 				C7C795FF1A789DC70071F936 /* blooth_scheduleIcon.png in Resources */,
 				C7C795F11A78960B0071F936 /* blooth_tabBarSelected.png in Resources */,
 				C7C795D51A78226D0071F936 /* blooth_text.png in Resources */,
 				C7C795FD1A789DBC0071F936 /* blooth_offersIcon.png in Resources */,
 				C7C795FB1A789DB20071F936 /* blooth_mapIcon.png in Resources */,
 				C7BC74531A780350000B9197 /* blooth_navbar_copy.png in Resources */,
+				C7C796121A79C9FC0071F936 /* blooth__userBGBLK.png in Resources */,
+				C7C7960A1A7950A40071F936 /* blooth__blkCircle.png in Resources */,
 				C7C795E71A787FF40071F936 /* blooth_ribbon_selected.png in Resources */,
 				C74238C61A0B11F100798294 /* Main.storyboard in Resources */,
 				C74238CB1A0B11F100798294 /* LaunchScreen.xib in Resources */,
@@ -478,6 +503,7 @@
 				C7C795D91A782C9A0071F936 /* blooth_logo_full.png in Resources */,
 				C7C795ED1A788F8B0071F936 /* blooth_settings.png in Resources */,
 				C7C795EB1A788AC90071F936 /* blooth_eventPicker.png in Resources */,
+				C7C796031A7918C10071F936 /* UserProfileViewController.xib in Resources */,
 				C7C795E51A787EC10071F936 /* blooth_ribbon.png in Resources */,
 				C71605E51A49E0FA009D58FD /* RegistrationViewController.xib in Resources */,
 				C7229F4C1A3C896E0059EE6F /* EventPicker.storyboard in Resources */,
@@ -505,6 +531,7 @@
 				C7205AA11A375CCF00944B10 /* KCLocationManager.m in Sources */,
 				C71605E31A490276009D58FD /* PlainTextFieldCell.m in Sources */,
 				C7AC0CD01A67F9FD008E582C /* Offer.m in Sources */,
+				C7C796061A79423C0071F936 /* UserProfileViewController.m in Sources */,
 				C7BC74511A77F525000B9197 /* HexColorConverter.m in Sources */,
 				C74238C31A0B11F100798294 /* TalksTableViewController.m in Sources */,
 				C74238C01A0B11F100798294 /* AppDelegate.m in Sources */,
@@ -519,6 +546,7 @@
 				C7AC0CC71A654FE0008E582C /* SurveyWebBrowser.m in Sources */,
 				C7652C631A21494C00A42108 /* ActivityView.m in Sources */,
 				C792A2C31A615A4B000BA563 /* SurveyTableViewCell.m in Sources */,
+				C7C796151A79CD760071F936 /* ProfileTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

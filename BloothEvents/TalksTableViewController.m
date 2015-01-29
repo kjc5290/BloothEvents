@@ -16,6 +16,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "HexColorConverter.h"
+#import "UserProfileViewController.h"
 
 
 @interface TalksTableViewController ()
@@ -198,7 +199,8 @@
 }
 
 - (void) showUser{
-    
+    UserProfileViewController *viewController = [[UserProfileViewController alloc] initWithNibName:nil bundle:nil];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 
