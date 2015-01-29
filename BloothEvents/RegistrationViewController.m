@@ -82,12 +82,11 @@
                                                   alertControllerWithTitle:alertTitle
                                                   message:alertMessage
                                                   preferredStyle:UIAlertControllerStyleAlert]; */
-            UIAlertView *alertViewSignupSuccess = [[UIAlertView alloc] initWithTitle:@"Success! Thanks for signing up!" message:@"Press OK to get started"
-                                                                            delegate:self
-                                                                   cancelButtonTitle:@"OK"
-                                                                   otherButtonTitles:nil];
+            UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tb = [mainboard instantiateInitialViewController];
+            [self presentViewController:tb animated:YES completion:nil];
             
-            [alertViewSignupSuccess show];
+
         } else {
             // Show the errorString somewhere and let the user try again.
             UIAlertView *alertViewLoginFailure = [[UIAlertView alloc] initWithTitle:@"Your signup information was invalid" message:@"Please try entering your information again"
@@ -146,9 +145,9 @@
             if (!error) {
                 // Hooray! Let them use the app now.
                 
-                UIAlertView *alertViewSignupSuccess = [[UIAlertView alloc] initWithTitle:@"Success! Thanks for signing up!" message:@"Press OK to get started" delegate: self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-                
-                [alertViewSignupSuccess show];
+                UIStoryboard* mainboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UITabBarController *tb = [mainboard instantiateInitialViewController];
+                [self presentViewController:tb animated:YES completion:nil];
                 
             } else {
                 // Show the errorString somewhere and let the user try again.

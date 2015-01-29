@@ -86,11 +86,8 @@
     UINavigationItem *item = [UINavigationItem alloc];
     item.leftBarButtonItem = back;
     item.hidesBackButton = YES;
-    [_navBar pushNavigationItem:item animated:NO];
-    
-    UINavigationItem *item2 = [UINavigationItem alloc];
     item.rightBarButtonItem = edit;
-    [_navBar pushNavigationItem:item2 animated:NO];
+    [_navBar pushNavigationItem:item animated:NO];
     
     self.profileInfo.tableFooterView.hidden = YES;
     

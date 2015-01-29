@@ -179,6 +179,8 @@
 {
 
     NSLog(@"locationManagerDidChangeAuthorizationStatus: %d", status);
+    for (CLBeaconRegion *region in self.locationManager.monitoredRegions){
+        [_locationManager requestStateForRegion:region];}
     /*if (status != 3){ ATTEMPT TO ENSURE PERMISSIONS
     NSString *message = @"Location Services Disabled! Blooth Events uses location services to provide exclusive offers while to users based on their location at the conference! Please enable Location services in Settings to get the full experience.";
         [self locationServicesNotAuthed:message];
@@ -232,7 +234,7 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    //filter the array out for any beacons that are far or unknown and compare to the last seen beacon in order to determine if an update is needed -70 rssi value might work better
+    //filter the array out for any beacons that are far or unknown and compare to the last seen beacon in order to determine if an update is needed -85 rssi value might work better
      NSPredicate *predicateIrrelevantBeacons = [NSPredicate predicateWithFormat:@"(self.accuracy != -1) AND ((self.proximity != %d) OR (self.proximity != %d))", CLProximityFar,CLProximityUnknown];
     NSArray *relevantBeacons = [beacons filteredArrayUsingPredicate: predicateIrrelevantBeacons];
     CLBeacon *closestBeacon = nil;
@@ -247,7 +249,10 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
         bool null = true;
         int count;
         if (_nearestBeacon != NULL){
-           [self lastBeaconSeenUpdate];
+           //self.nearestBeacon = closestBeacon;
+            if (self.nearestBeacon.rssi > -85){
+                [self lastBeaconSeenUpdate];
+            }
              null = false;
             count = 0;
         }else{
